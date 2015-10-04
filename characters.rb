@@ -2,8 +2,6 @@ class Character
 	def initialize(name)
 		@name = name
 	end
-
-
 end
 
 # unit: for example $ for money. Should be immutable, once created ?
@@ -32,7 +30,7 @@ class Stat < Value
 		@name = name
 		@details = details
 	end
-
+end
 
 class CharacterStats
 	def initialize(hit_point, magic_point, attack)
