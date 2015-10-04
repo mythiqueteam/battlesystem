@@ -1,21 +1,18 @@
 module Chocobo
   class Audio < Choco
 
-    def self.play_mp3(theme)
-      play_theme("#{theme}.mp3")
+    def self.play_theme(theme)
+      play_theme("themes/#{theme}")
     end
 
-    def self.play_wave(theme)
-      play_theme("#{theme}")
+    def self.play_song(theme)
+      play_theme("songs/#{theme}")
     end
 
-    def self.play_ogg(theme)
-      play_theme("#{theme}.ogg")
-    end
 
     private
     def self.play_theme(theme)
-      MG::Audio.play("themes/#{theme}")
+      MG::Audio.play("audio/#{theme}")
     end
   end
 end
