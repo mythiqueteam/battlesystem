@@ -16,8 +16,7 @@ module Character
             @first_name = first_name
             @last_name = last_name
             @level = level
-            @hit_point = Stats::how_many_hitpoints(level)
-            @magic_points = Stats::how_many_magicpoints(level)
+            @stats = Stats::status(level)
         end
 
 
@@ -25,5 +24,7 @@ module Character
             @first_name+" "+@last_name+" : "+@level.to_s
         end
     end
+
+
 end
 
