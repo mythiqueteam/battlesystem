@@ -52,18 +52,30 @@ end
 
 
 
-
+# a, b: Value objects
+#
+# Check if a, and b have the same units
+def check_unit(a, b)
+    if a.unit != b.unit
+        raise TypeError, "a and b have different unit"
+    else
+        return nil
+    end
+end
 
 
 
 
 
 class Value
+    attr_accessor :unit
+
     def initialize(value=0, min=0, max=0, unit=nil)
-        @value= value
+        @value = value
         @min = min
         @max = max
         @unit = unit
+        @value = ensure_range(@value, @min, @max) #check if initialization is correct
     end
 
     def value=(new_value)
@@ -81,4 +93,5 @@ class Value
     def min
         express(@min, @unit)
     end
+
 end
