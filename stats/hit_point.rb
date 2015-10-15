@@ -31,4 +31,11 @@ module Stats
     end
 
 
+
+
+    # Compute how many hit points a character should have
+    def self.how_many_hitpoints(level)
+        initial_hp = 100*level.value
+        Stats::HitPoint.new(initial_hp, initial_hp)
+    end
 end
