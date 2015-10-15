@@ -8,4 +8,8 @@ module Stats
     #MAGIC POINTS
     MIN_MP = 0
     MAX_MP = 999
+
+    #LEVEL
+    MIN_LEVEL = 1
+    MAX_LEVEL = 100
 end
