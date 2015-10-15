@@ -14,14 +14,13 @@ module Common
     # max: max value possible
     #
     # Prints out conveniently the value
-    def express(val, unit, max=nil)
+    def self.express(val, unit, max=nil)
         if max == nil
             val.to_s + " " + unit.to_s
         else
             val.to_s + " / " + max.to_s + " " + unit.to_s
         end
     end
-
 
 
 
@@ -32,21 +31,16 @@ module Common
     # Ensure that val is within [min,max]
     #
     # Ternary operator cannot work, because we need to exit the function after one change
-    def ensure_range(val, min, max)
+    def self.ensure_range(val, min, max)
         if val < min
-            return min
+          min
+        elsif val > max
+          max
         else
-            results=val
+          val
         end
-
-        if val > max
-            return max
-        else
-            results = val
-        end
-
-        return results
     end
+
 
 
 
@@ -55,7 +49,7 @@ module Common
     # a, b: Value objects
     #
     # Check if a, and b have the same units
-    def check_unit(a, b)
+    def self.check_unit(a, b)
         if a.unit != b.unit
             raise TypeError, "a and b have different unit"
         else
@@ -83,16 +77,18 @@ module Common
         end
 
         def value
-            express(@value, @unit, @max)
+            Common::express(@value, @unit, @max)
         end
 
         def max
-            express(@max, @unit)
+            Common::express(@max, @unit)
         end
 
         def min
-            express(@min, @unit)
+            Common::express(@min, @unit)
         end
+
+
 
     end
 
