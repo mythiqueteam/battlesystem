@@ -3,6 +3,12 @@
 # Value that can take only a value in a given range, eg: Strength [0,MAX_STATS] or gold [0, MAX_GOLD]
 
 
+
+
+
+
+
+
 # val: value in float
 # unit: usually string
 # max: max value possible
@@ -41,6 +47,15 @@ def ensure_range(val, min, max)
 
     return results
 end
+
+
+
+
+
+
+
+
+
 
 
 class Value
