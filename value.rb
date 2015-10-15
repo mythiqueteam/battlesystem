@@ -19,6 +19,30 @@ end
 
 
 
+# val: new value to test
+# min: minimum authorized
+# max: maximum authorized
+#
+# Ensure that val is within [min,max]
+#
+# Ternary operator cannot work, because we need to exit the function after one change
+def ensure_range(val, min, max)
+    if val < min
+        return min
+    else
+        results=val
+    end
+
+    if val > max
+        return max
+    else
+        results = val
+    end
+
+    return results
+end
+
+
 class Value
     def initialize(value=0, min=0, max=0, unit=nil)
         @value= value
@@ -28,8 +52,7 @@ class Value
     end
 
     def value=(new_value)
-        new_value < @min ? @value = @min : @value = new_value
-        new_value > @max ? @value = @max : @value = new_value
+        @value = ensure_range(new_value, @min, @max)
     end
 
     def value
@@ -48,9 +71,9 @@ end
 
 
 
-fish = Value.new(1.2354,2,3,"fish")
+fish = Value.new(1.2354,0,3,"fish")
 puts fish.value
 puts fish.min
 puts fish.max
-fish.value = 1
+fish.value = 2
 puts fish.value
