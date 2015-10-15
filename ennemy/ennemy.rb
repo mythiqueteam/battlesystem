@@ -1,0 +1,3 @@
+module Ennemy
+
+end
