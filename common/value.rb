@@ -62,7 +62,7 @@ module Common
 
 
     class Value
-        attr_accessor :unit
+        attr_accessor :unit, :value, :min, :max
 
         def initialize(value=0, min=0, max=0, unit=nil)
             @value = value
@@ -76,20 +76,9 @@ module Common
             @value = ensure_range(new_value, @min, @max)
         end
 
-        def value
+        def to_s
             Common::express(@value, @unit, @max)
         end
-
-        def max
-            Common::express(@max, @unit)
-        end
-
-        def min
-            Common::express(@min, @unit)
-        end
-
-
-
     end
 
 
