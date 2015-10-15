@@ -1,0 +1,4 @@
+class Hero < Character
+
+end
+
