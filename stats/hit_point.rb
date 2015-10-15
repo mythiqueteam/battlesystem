@@ -1,7 +1,3 @@
-##remove require relative before commiting
-#require_relative "../common/value.rb"
-#require_relative "./stats.rb"
-
 module Stats
 
     class HitPoint < Common::Value 
