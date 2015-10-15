@@ -67,13 +67,3 @@ class Value
         express(@min, @unit)
     end
 end
-
-
-
-
-fish = Value.new(1.2354,0,3,"fish")
-puts fish.value
-puts fish.min
-puts fish.max
-fish.value = 2
-puts fish.value
