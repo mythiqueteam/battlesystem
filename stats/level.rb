@@ -1,3 +1,6 @@
+require_relative "../common/value.rb"
+require_relative "./stats.rb"
+
 module Stats
 
     class Level < Common::Value 
