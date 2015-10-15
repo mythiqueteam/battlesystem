@@ -31,4 +31,9 @@ module Stats
     end
 
 
+    # Compute how many hit points a character should have
+    def self.how_many_magicpoints(level)
+        initial_mp = 10*level.value
+        Stats::MagicPoint.new(initial_mp, initial_mp)
+    end
 end
