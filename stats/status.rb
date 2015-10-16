@@ -1,19 +1,23 @@
-require_relative "./stats.rb"
 require_relative "./level.rb"
+require_relative "./force.rb"
+require_relative "./defense.rb"
 require_relative "./hit_point.rb"
 require_relative "./magic_point.rb"
-require_relative "../common/value.rb"
-
 
 module Stats
 
+    DEFAULT_STATUS = Status.new()
+
     class Status
         attr_accessor :hit_point, :magic_point, :force, :defense
-        def initialize(level)
-            @hit_point = Stats::how_many_hitpoints(level)
-            @magic_point = Stats::how_many_magicpoints(level)
-            @force = Stats::Force.new(2)
-            @defense = Stats::Defense.new(1)
+        def initialize(hit_point=Stats::DEFAULT_HIT_POINT,
+                       magic_point=Stats::DEFAULT_MAGIC_POINT,
+                       force=Stats::DEFAULT_FORCE,
+                       defense=Stats::DEFAULT_DEFENSE)
+            @hit_point = hit_point
+            @magic_point = magic_point
+            @force = force
+            @defense = defense
         end
 
     end

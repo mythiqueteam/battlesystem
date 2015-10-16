@@ -1,13 +1,18 @@
 require_relative "../common/value.rb"
-require_relative "./stats.rb"
+require_relative "../common/unit.rb"
+
 
 module Stats
+    MIN_LEVEL = 1
+    MAX_LEVEL = 100
+    DEFAULT_LEVEL = Level.new(0)
 
+    
     class Level < Common::Value 
         def initialize(start)
             @min = Stats::MIN_LEVEL
             @value = start
-            @unit = "Level"
+            @unit = Common::LEVEL_UNIT
             @max = MAX_LEVEL
 
             #sanity check

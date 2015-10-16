@@ -1,14 +1,19 @@
-require_relative "./stats.rb"
 require_relative "../common/value.rb"
-require_relative "./magic_point.rb"
+require_relative "../common/unit.rb"
+
+
 
 module Stats
+    MIN_HP = 0
+    MAX_HP = 9999
+    DEFAULT_HIT_POINT = HitPoint.new(0, 0)
 
+    
     class HitPoint < Common::Value 
         def initialize(start, max)
             @min = Stats::MIN_HP 
             @value = start
-            @unit = HP_UNIT
+            @unit = Common::HP_UNIT
             @max = max
 
             #sanity check
