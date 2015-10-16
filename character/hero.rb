@@ -35,10 +35,3 @@ module Character
 
 
 end
-
-ennemy1 = Ennemy::Succube.new(Stats::Status.new(Stats::Level.new(1))) #objet monstre avec HP, MP, force, defense
-
-zeyn = Character::Hero.new("zeyn", "dupont")
-puts ennemy1.status.hit_point
-zeyn.attack(ennemy1)
-puts ennemy1.status.hit_point #est ce que HP => -5 ?
