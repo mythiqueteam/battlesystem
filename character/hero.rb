@@ -28,7 +28,7 @@ module Character
 
 
         def attack(target)
-            damage = @status.force.value #-5HP
+            damage = @status.force.value - target.status.defense.value #IMPROVEMENT: should create a damage class
             target.status.hit_point -= damage
         end
     end
