@@ -6,6 +6,7 @@ require_relative "../common/value.rb"
 
 
 module Stats
+
     class Status
         attr_accessor :hit_point, :magic_point, :force, :defense
         def initialize(level)
