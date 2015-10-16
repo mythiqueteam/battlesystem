@@ -8,7 +8,7 @@ module Stats
         def initialize(start, max)
             @min = Stats::MIN_HP 
             @value = start
-            @unit = "HP"
+            @unit = HP_UNIT
             @max = max
 
             #sanity check

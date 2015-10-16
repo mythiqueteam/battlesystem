@@ -4,7 +4,7 @@ module Stats
         def initialize(start, max)
             @min = Stats::MIN_HP 
             @value = start
-            @unit = "MP"
+            @unit = MP_UNIT
             @max = max
 
             #sanity check
