@@ -60,8 +60,14 @@ module Common
         def initialize(value=0, min=0, max=0, unit=nil)
             @value = value
             @min = min
-            @max = max
             @unit = unit
+
+            if @value > 0 and max == 0
+                @max = @value
+            else
+                @max = max
+            end
+
             @value = Common::ensure_range(@value, @min, @max) #check if initialization is correct
         end
 
@@ -86,13 +92,13 @@ module Common
             end
             Value.new(@value, @min, @max, @unit)
         end
+
+        def -(a)
+            b = -a
+            self + b
+        end
+
     end
-
-
-
-
-
-
 
 
 end
