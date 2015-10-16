@@ -1,7 +1,4 @@
-require_relative "./stats.rb"
 require_relative "./level.rb"
-require_relative "./hit_point.rb"
-require_relative "./magic_point.rb"
 
 
 module Stats
