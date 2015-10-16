@@ -30,6 +30,14 @@ module Stats
     DEFAULT_DEFENSE = Stats::Defense.new(1)
     DEFAULT_HIT_POINT = Stats::HitPoint.new(1, 1)
     DEFAULT_MAGIC_POINT = Stats::MagicPoint.new(0, 0)
+
+    #ZERO STATUS
+    STATUS_ZERO = Stats::Status.new(0)
+    STATUS_ZERO.status.hit_point = 0
+    STATUS_ZERO.status.magic_point = 0
+    STATUS_ZERO.status.force = 0
+    STATUS_ZERO.status.defense = 0
+
 end
 
 
