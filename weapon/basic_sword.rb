@@ -1,9 +1,9 @@
 module Weapon
     class BasicSword
-        def initialize(bonus = DEFAULT_STATUS)
+        def initialize()
             @name = "Basic Sword"
-            @bonus = bonus
+            @bonus = Stats::DEFAULT_STATUS
+            @bonus.force = 2 
         end
-
     end
 end
