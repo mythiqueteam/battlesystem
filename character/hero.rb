@@ -17,7 +17,8 @@ module Character
         attr_accessor :level
         def initialize(first_name, last_name,
                        level=Stats::DEFAULT_LEVEL,
-                       status=Stats::DEFAULT_STATUS)
+                       status=Stats::DEFAULT_STATUS,
+                       equipment=DEFAULT_EQUIPMENT)
             @first_name = first_name
             @last_name = last_name
             @level = level
