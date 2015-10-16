@@ -13,6 +13,10 @@ module Ennemy
             @level = Stats::Level.new(1)
             @status = status
         end
+
+        def to_s
+            @name+"("+@level.to_s+")"
+        end
     end
 
 end
