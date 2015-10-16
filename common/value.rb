@@ -1,12 +1,3 @@
-# unit: for example $ for money. Should be immutable, once created ?
-#
-# Value that can take only a value in a given range, eg: Strength [0,MAX_STATS] or gold [0, MAX_GOLD]
-
-
-
-
-
-
 module Common
 
     # val: value in float
@@ -60,7 +51,9 @@ module Common
 
 
 
-
+    # unit: for example $ for money. Should be immutable, once created ?
+    #
+    # Value that can take only a value in a given range, eg: Strength [0,MAX_STATS] or gold [0, MAX_GOLD]
     class Value
         attr_accessor :unit, :value, :min, :max
 
@@ -69,15 +62,29 @@ module Common
             @min = min
             @max = max
             @unit = unit
-            @value = ensure_range(@value, @min, @max) #check if initialization is correct
+            @value = Common::ensure_range(@value, @min, @max) #check if initialization is correct
         end
 
         def value=(new_value)
-            @value = ensure_range(new_value, @min, @max)
+            @value = Common::ensure_range(new_value, @min, @max)
         end
 
         def to_s
             Common::express(@value, @unit, @max)
+        end
+
+        def +(a)
+            if a.is_a?(Numeric)
+                @value += a
+                @value = Common::ensure_range(@value, @min, @max)
+            elsif a.is_a?(Object)
+                Common::check_unit(self, a)
+                @value += a.value
+                @max = [@max,a.max].max #new max is max(a,b)
+            else
+                raise TypeError, "You are trying to sum two objects of different kinds."
+            end
+            Value.new(@value, @min, @max, @unit)
         end
     end
 
