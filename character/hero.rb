@@ -41,13 +41,3 @@ module Character
 
 
 end
-
-
-zeyn = Character::Hero.new("zeyn", "patate")
-initial_status_succube = Stats::Status.new(Stats::Level.new(1))
-succube1 = Ennemy::Succube.new(initial_status_succube)
-puts succube1.to_s
-print succube1.status.hit_point
-puts ""
-zeyn.attack(succube1)
-puts succube1.to_s, succube1.status.hit_point
