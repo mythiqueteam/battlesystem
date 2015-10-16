@@ -97,6 +97,11 @@ module Common
             self + b
         end
 
+        def -@
+            @value = -@value
+        end
+
+
     end
 
 
