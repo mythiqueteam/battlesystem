@@ -1,7 +1,11 @@
 require_relative "./level.rb"
-
+require_relative "./force.rb"
+require_relative "./defense.rb"
+require_relative "./hit_point.rb"
+require_relative "./magic_point.rb"
 
 module Stats
+    MIN_STAT_VALUE = 0
     MAX_STAT_VALUE = 255
 
     #HIT POINTS
@@ -15,4 +19,18 @@ module Stats
     #LEVEL
     MIN_LEVEL = 1
     MAX_LEVEL = 100
+
+    #OTHER
+    HP_UNIT = "HP"
+    MP_UNIT = "MP"
+    FORCE_UNIT = "FOR"
+    DEFENSE_UNIT = "DEF"
+
+    DEFAULT_FORCE = Stats::Force.new(1)
+    DEFAULT_DEFENSE = Stats::Defense.new(1)
+    DEFAULT_HIT_POINT = Stats::HitPoint.new(1, 1)
+    DEFAULT_MAGIC_POINT = Stats::MagicPoint.new(0, 0)
 end
+
+
+
