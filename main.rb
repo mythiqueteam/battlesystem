@@ -1,4 +1,6 @@
 require_relative "./character/hero.rb"
+require_relative "./stats/level.rb"
 
-zeyn = Character::Hero.new("Zeyn", "Dalton")
+initial_level = Stats::Level.new(2)
+zeyn = Character::Hero.new("Zeyn", "Dalton", level=initial_level)
 puts zeyn
