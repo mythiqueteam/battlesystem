@@ -3,7 +3,7 @@ module Stats
     class Defense < Common::Value
         def initialize(value)
             @value = value
-            @min = 0
+            @min = MIN_STAT_VALUE
             @max = Stats::MAX_STAT_VALUE
             @unit = DEFENSE_UNIT
         end
