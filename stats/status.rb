@@ -12,8 +12,9 @@ module Stats
         def initialize(level)
             @hit_point = Stats::how_many_hitpoints(level)
             @magic_point = Stats::how_many_magicpoints(level)
-            @force = Common::Value.new(2,0,MAX_STAT_VALUE,"FOR")
-            @defense = Common::Value.new(1,0,MAX_STAT_VALUE,"DEF")
+            @force = Stats::Force.new(2)
+            @defense = Stats::Defense.new(1)
         end
+
     end
 end
