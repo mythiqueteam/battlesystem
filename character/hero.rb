@@ -8,6 +8,8 @@ require_relative "../stats/status.rb"
 require_relative "../stats/stats.rb"
 require_relative "../ennemy/ennemy.rb"
 require_relative "../ennemy/succube.rb"
+require_relative "../battle/battle.rb"
+require_relative "../battle/damage.rb"
 
 module Character
 
@@ -28,10 +30,24 @@ module Character
 
 
         def attack(target)
-            damage = @status.force.value - target.status.defense.value #TODO: should create a damage class
+            damage = Battle::Damage.normal(@status.force, target)
             target.status.hit_point -= damage
+        end
+
+        def pass() #do nothing
+            nil
         end
     end
 
 
 end
+
+
+zeyn = Character::Hero.new("zeyn", "patate")
+initial_status_succube = Stats::Status.new(Stats::Level.new(1))
+succube1 = Ennemy::Succube.new(initial_status_succube)
+puts succube1.to_s
+print succube1.status.hit_point
+puts ""
+zeyn.attack(succube1)
+puts succube1.to_s, succube1.status.hit_point
