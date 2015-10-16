@@ -86,7 +86,6 @@ module Common
             elsif a.is_a?(Object)
                 Common::check_unit(self, a)
                 @value += a.value
-                @max = [@max,a.max].max #new max is max(a,b)
             else
                 raise TypeError, "You are trying to sum two objects of different kinds."
             end
