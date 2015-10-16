@@ -4,7 +4,6 @@ require_relative "../common/unit.rb"
 module Stats
     MIN_MP = 0
     MAX_MP = 999
-    DEFAULT_MAGIC_POINT = MagicPoint.new(0, 0)
     
     class MagicPoint < Common::Value 
         def initialize(start, max)
@@ -42,4 +41,7 @@ module Stats
         initial_mp = 10*level.value
         Stats::MagicPoint.new(initial_mp, initial_mp)
     end
+
+
+    DEFAULT_MAGIC_POINT = MagicPoint.new(0, 0)
 end

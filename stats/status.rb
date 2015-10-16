@@ -6,8 +6,6 @@ require_relative "./magic_point.rb"
 
 module Stats
 
-    DEFAULT_STATUS = Status.new()
-
     class Status
         attr_accessor :hit_point, :magic_point, :force, :defense
         def initialize(hit_point=Stats::DEFAULT_HIT_POINT,
@@ -19,6 +17,7 @@ module Stats
             @force = force
             @defense = defense
         end
-
     end
+
+    DEFAULT_STATUS = Status.new()
 end

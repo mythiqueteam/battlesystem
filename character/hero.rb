@@ -16,11 +16,12 @@ module Character
     class Hero < Character::Human
         attr_accessor :level
         def initialize(first_name, last_name,
-                       level=INITIAL_LEVEL)
+                       level=Stats::DEFAULT_LEVEL,
+                       status=Stats::DEFAULT_STATUS)
             @first_name = first_name
             @last_name = last_name
             @level = level
-            @status = Stats::Status.new(@level)
+            @status = status
         end
 
 

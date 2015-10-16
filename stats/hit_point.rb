@@ -6,8 +6,6 @@ require_relative "../common/unit.rb"
 module Stats
     MIN_HP = 0
     MAX_HP = 9999
-    DEFAULT_HIT_POINT = HitPoint.new(0, 0)
-
     
     class HitPoint < Common::Value 
         def initialize(start, max)
@@ -29,4 +27,7 @@ module Stats
         initial_hp = 100*level.value
         Stats::HitPoint.new(initial_hp, initial_hp)
     end
+
+
+    DEFAULT_HIT_POINT = HitPoint.new(0, 0)
 end

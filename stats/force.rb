@@ -1,15 +1,17 @@
 require_relative "../common/unit.rb"
+require_relative "./stats.rb"
 
 module Stats
-    DEFAULT_FORCE = Force.new(0)
 
-    
     class Force < Common::Value
         def initialize(value)
             @value = value
-            @min = MIN_STAT_VALUE
+            @min = Stats::MIN_STAT_VALUE
             @max = Stats::MAX_STAT_VALUE
             @unit = Common::FORCE_UNIT
         end
     end
+
+
+    DEFAULT_FORCE = Force.new(0)
 end
