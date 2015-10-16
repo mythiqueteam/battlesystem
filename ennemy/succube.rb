@@ -5,9 +5,9 @@ require_relative "./monster.rb"
 require_relative "./ennemy.rb"
 
 
-module Ennemy
-
-    class Succube < Monster
+module Ennemy    
+    class Succube < Ennemy::Monster
+        attr_reader :status
         def initialize(status)
             @name = "Succube"
             @level = Stats::Level.new(1)
