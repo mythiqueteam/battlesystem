@@ -1,16 +1,28 @@
-require_relative "../../stats/status.rb"
+require_relative "../../../weight.rb"
+require_relative "../../../../stats/hit_point.rb"
+require_relative "../../../../stats/magic_point.rb"
+require_relative "../../../../stats/force.rb"
+require_relative "../../../../stats/defense.rb"
+require_relative "sword.rb"
 
-module Weapon
-    class BasicSword < Weapon::Sword
-        def initialize()
-            @name = "Basic Sword"
-            @weight = 
-            hit_point = Stats::HitPoint.new(10,10)
-            magic_point = Stats::MagicPoint.new(0,0)
-            force = Stats::Force.new(1)
-            defense = Stats::Force.new(1)
-            @bonus = Stats::Status.new(hit_point, magic_point, force, defense)
+module Inventory
+    module Equipment
+        class BasicSword < Inventory::Equipment::Sword
+            attr_reader :name, :weight, :bonus
+            def initialize()
+                @name = "Basic Sword"
+                @weight = Inventory::DEFAULT_WEIGHT
+                hit_point = Stats::HitPoint.new(10,10)
+                magic_point = Stats::MagicPoint.new(0,0)
+                force = Stats::Force.new(1)
+                defense = Stats::Defense.new(1)
+                @bonus = Stats::Status.new(hit_point, magic_point, force, defense)
 
+            end
         end
     end
 end
+
+
+basic_sword = Inventory::Equipment::BasicSword.new()
+puts basic_sword.name
