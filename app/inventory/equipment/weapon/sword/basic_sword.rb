@@ -22,7 +22,3 @@ module Inventory
         end
     end
 end
-
-
-basic_sword = Inventory::Equipment::BasicSword.new()
-puts basic_sword.name

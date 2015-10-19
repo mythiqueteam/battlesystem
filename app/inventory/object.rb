@@ -28,6 +28,3 @@ module Inventory
         end
     end
 end
-
-potion = Inventory::Object.new("Super potion", category:"potion")
-puts potion
