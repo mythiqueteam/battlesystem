@@ -1,7 +1,7 @@
 require_relative "../common/unit.rb"
 require_relative "../common/value.rb"
 
-module Equipment
+module Inventory
     MAX_WEIGHT = 9999
 
     class Weight < Common::Value

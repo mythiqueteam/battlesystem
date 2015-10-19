@@ -1,12 +1,11 @@
 require_relative "../common/unit.rb"
-require_relative "./equipment.rb"
 require_relative "./weight.rb"
 
 module Inventory
     class Object
         attr_reader :name ,:weight, :is_quest, :type
         def initialize(name, 
-                       weight=Equipment::DEFAULT_WEIGHT, 
+                       weight=Inventory::DEFAULT_WEIGHT, 
                        is_quest: false,
                        type: Common::UNKNOWN)
             @name = name
@@ -30,5 +29,5 @@ module Inventory
     end
 end
 
-potion = Equipment::Object.new("Super potion", type:"potion")
+potion = Inventory::Object.new("Super potion", type:"potion")
 puts potion
