@@ -5,5 +5,5 @@ module Common
     MP_UNIT = "MP"
     FORCE_UNIT = "FOR"
     DEFENSE_UNIT = "DEF"
-    
+    UNKNOWN = nil
 end
