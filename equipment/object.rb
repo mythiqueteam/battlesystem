@@ -6,6 +6,7 @@ module Equipment
             @name = name
             @weight = weight
             @is_quest = is_quest
+            @type = type #sword, potion, etc (for sort)
         end
 
         # force: bypass is_quest attribute, and force destruction of object
