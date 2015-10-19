@@ -10,7 +10,3 @@ module Inventory
         end
     end
 end
-
-
-basic = Inventory::Equipment::Sword.new()
-puts basic.category

@@ -7,11 +7,11 @@ module Inventory
         def initialize(name, 
                        weight=Inventory::DEFAULT_WEIGHT, 
                        is_quest: false,
-                       category: Common::UNKNOWN)
+                       category: Array.new())
             @name = name
             @weight = weight
             @is_quest = is_quest
-            @category = category #sword, potion, etc (for sort)
+            @category = category #sword, potion, etc (for sort), will be a list from which we add more infos
         end
 
         # force: bypass is_quest attribute, and force destruction of object
@@ -28,6 +28,3 @@ module Inventory
         end
     end
 end
-
-potion = Inventory::Object.new("Super potion", category:"potion")
-puts potion
