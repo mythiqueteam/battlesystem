@@ -3,15 +3,15 @@ require_relative "./weight.rb"
 
 module Inventory
     class Object
-        attr_reader :name ,:weight, :is_quest, :type
+        attr_reader :name ,:weight, :is_quest, :category
         def initialize(name, 
                        weight=Inventory::DEFAULT_WEIGHT, 
                        is_quest: false,
-                       type: Common::UNKNOWN)
+                       category: Common::UNKNOWN)
             @name = name
             @weight = weight
             @is_quest = is_quest
-            @type = type #sword, potion, etc (for sort)
+            @category = category #sword, potion, etc (for sort)
         end
 
         # force: bypass is_quest attribute, and force destruction of object
@@ -24,10 +24,10 @@ module Inventory
         end
 
         def to_s
-            @name+" ("+@type+")"
+            @name+" ("+@category+")"
         end
     end
 end
 
-potion = Inventory::Object.new("Super potion", type:"potion")
+potion = Inventory::Object.new("Super potion", category:"potion")
 puts potion
