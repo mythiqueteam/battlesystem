@@ -6,5 +6,5 @@ module Common
     FORCE_UNIT = "FOR"
     DEFENSE_UNIT = "DEF"
     WEIGHT_UNIT = "KG"
-    UNKNOWN = nil
+    UNKNOWN = "N/A"
 end

@@ -5,10 +5,11 @@ require_relative "./weight.rb"
 module Equipment
 
     class Object
-        attr_reader :weight, :is_quest
-        def initialize(name, weight=DEFAULT_WEIGHT, 
-                       is_quest=false,
-                       type=Common::UNKNOWN)
+        attr_reader :name ,:weight, :is_quest, :type
+        def initialize(name, 
+                       weight=Equipment::DEFAULT_WEIGHT, 
+                       is_quest: false,
+                       type: Common::UNKNOWN)
             @name = name
             @weight = weight
             @is_quest = is_quest
@@ -16,7 +17,7 @@ module Equipment
         end
 
         # force: bypass is_quest attribute, and force destruction of object
-        def destroy(force=false)
+        def destroy(force: false)
             if @is_quest and not force
                 raise SecurityError, "Cannot destroy quest object."
             else
@@ -25,8 +26,10 @@ module Equipment
         end
 
         def to_s
-            @name
+            @name+" ("+@type+")"
         end
     end
-
 end
+
+potion = Equipment::Object.new("Super potion", type:"potion")
+puts potion
