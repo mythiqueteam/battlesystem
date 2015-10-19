@@ -18,11 +18,13 @@ module Character
         def initialize(first_name, last_name,
                        level=Stats::DEFAULT_LEVEL,
                        status=Stats::DEFAULT_STATUS,
-                       equipment=DEFAULT_EQUIPMENT)
+                       equipment=DEFAULT_EQUIPMENT,
+                       is_dead = false)
             @first_name = first_name
             @last_name = last_name
             @level = level
             @status = status
+            @is_dead = is_dead
         end
 
 
