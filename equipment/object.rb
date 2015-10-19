@@ -1,8 +1,12 @@
+require_relative "../common/unit.rb"
+
 module Equipment
     DEFAULT_WEIGHT = 1
     class Object
         attr_reader :weight, :is_quest
-        def initialize(name, weight=DEFAULT_WEIGHT, is_quest=false)
+        def initialize(name, weight=DEFAULT_WEIGHT, 
+                       is_quest=false,
+                       type=Common::UNKNONW)
             @name = name
             @weight = weight
             @is_quest = is_quest
