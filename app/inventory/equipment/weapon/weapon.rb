@@ -9,6 +9,11 @@ module Inventory
                 @bonus = bonus
                 @category = ["Weapon"]
             end
+
+            def to_s
+                list_bonus = "list of bonus" #FIXME: create a routine to list out all bonus
+                @name+"("+list_bonus+")"
+            end
         end
     end
 end
