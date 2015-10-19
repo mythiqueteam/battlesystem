@@ -2,8 +2,7 @@ require_relative "../common/unit.rb"
 require_relative "./equipment.rb"
 require_relative "./weight.rb"
 
-module Equipment
-
+module Inventory
     class Object
         attr_reader :name ,:weight, :is_quest, :type
         def initialize(name, 
