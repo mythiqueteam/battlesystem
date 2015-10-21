@@ -1,3 +1,10 @@
-module Equipment
-    DEFAULT_WEAPON = nil
+require_relative "../object"
+
+module Inventory
+    class Equipment < Inventory::Object
+        def to_s
+            list_bonus = "list of bonus" #FIXME: create a routine to list out all bonus for a given equipment (eg sword)
+            @name+"("+list_bonus+")"
+        end
+    end
 end
