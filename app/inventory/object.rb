@@ -1,5 +1,4 @@
-require_relative "../common/unit.rb"
-require_relative "./weight.rb"
+require_relative "./inventory.rb"
 
 module Inventory
     class Object
