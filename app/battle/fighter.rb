@@ -1,25 +1,20 @@
+require_relative "battle.rb"
 
 module Battle
 
-    class Fighter < Character::Human
+    class Fighter 
         attr_accessor :level
-        def initialize(first_name, last_name,
+        def initialize(name,
                        level=Stats::DEFAULT_LEVEL,
                        status=Stats::DEFAULT_STATUS,
                        equipment=DEFAULT_EQUIPMENT,
                        is_dead = false)
-            @first_name = first_name
-            @last_name = last_name
+            @name = name #identifier during combat
             @level = level
             @status = status
+            @equipment = equipment
             @is_dead = is_dead
         end
-
-
-        def to_s
-            @first_name+" "+@last_name+" : "+@level.to_s
-        end
-
 
         def attack(target)
             damage = Battle::Damage.normal(@status.force, target)
