@@ -1,9 +1,4 @@
-module Ennemy
-    class Monster 
-        def initialize(name, level)
-            @name = name
-            @level = level
-        end
-
+module Character
+    module Monster 
     end
 end
