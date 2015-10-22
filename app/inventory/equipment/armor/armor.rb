@@ -8,5 +8,4 @@ module Inventory
             @category = ["Armor"]
         end
     end
-    DEFAULT_ARMOR = Inventory::Armor.new()
 end
