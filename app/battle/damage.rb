@@ -1,4 +1,5 @@
 require_relative "../common/value.rb"
+require_relative "battle.rb"
 
 module Battle
     class Damage < Common::Value

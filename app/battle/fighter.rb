@@ -1,4 +1,4 @@
-require_relative "battle.rb"
+require_relative "damage.rb"
 
 module Battle
 

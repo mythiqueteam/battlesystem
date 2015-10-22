@@ -1,4 +1,6 @@
 require_relative "../inventory.rb"
+require_relative "weapon/weapon.rb"
+require_relative "armor/plate/plate.rb"
 
 module Inventory
     class Equipment
