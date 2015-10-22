@@ -1,7 +1,7 @@
 require_relative "./character.rb"
 
 module Character
-    class Human
+    class Human < Character::Living
         attr_reader :first_name, :last_name, :birthday
         
         def initialize(first_name, last_name, birthday=Common::UNKNOWN)
@@ -10,9 +10,6 @@ module Character
             @birthday = birthday
         end
 
-        def age(time_ingame)
-            time_ingame - birthday
-        end
     end
 end
 
