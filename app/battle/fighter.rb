@@ -24,6 +24,10 @@ module Battle
         def pass() #do nothing
             nil
         end
+
+        def to_s
+            @name+" ("+@level.to_s+")"
+        end
     end
 
 
