@@ -1,4 +1,4 @@
-require_relative "../object"
+require_relative "../inventory.rb"
 
 module Inventory
     class Equipment
@@ -10,7 +10,7 @@ module Inventory
         
         def to_s
             list_bonus = "list of bonus" #FIXME: create a routine to list out all bonus for a given equipment (eg sword)
-            @name+"("+list_bonus+")"
+            "("+list_bonus+")"
         end
     end
 end
