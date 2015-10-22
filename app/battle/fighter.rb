@@ -8,7 +8,7 @@ module Battle
                        level=Stats::DEFAULT_LEVEL,
                        status=Stats::DEFAULT_STATUS,
                        equipment=DEFAULT_EQUIPMENT,
-                       is_dead = false)
+                       is_dead=false)
             @name = name #identifier during combat
             @level = level
             @status = status
