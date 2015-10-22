@@ -5,7 +5,7 @@ module Inventory
         attr_reader :name, :weight, :bonus
         def initialize()
             @name = "Basic Plate"
-            @weight = Inventory::DEFAULT_WEIGHT
+            @weight = Inventory::Weight.new(5)
 
             #setup bonus
             hit_point = Stats::HitPoint.new(10,10)
