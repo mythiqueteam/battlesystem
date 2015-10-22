@@ -13,6 +13,6 @@ module Inventory
             "("+list_bonus+")"
         end
     end
-    DEFAULT_EQUIPMENT = Inventory::Equipment.new(Inventory::DEFAULT_WEAPON
+    DEFAULT_EQUIPMENT = Inventory::Equipment.new(Inventory::DEFAULT_WEAPON,
                                                  Inventory::DEFAULT_PLATE)
 end
