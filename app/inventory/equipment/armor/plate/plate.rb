@@ -4,7 +4,7 @@ module Inventory
     class Plate < Inventory::Armor
         attr_reader :category
         def initialize()
-            @bonus = Status::DEFAULT_STATUS
+            @bonus = Stats::DEFAULT_STATUS
             @category = ["Armor", "Plate"]
         end
     end
