@@ -1,19 +1,7 @@
-require_relative "./character.rb"
-require_relative "./human.rb"
-require_relative "../common/value.rb"
-require_relative "../stats/hit_point.rb"
-require_relative "../stats/magic_point.rb"
-require_relative "../stats/level.rb"
-require_relative "../stats/status.rb"
-require_relative "../stats/stats.rb"
-require_relative "../ennemy/ennemy.rb"
-require_relative "../ennemy/succube.rb"
-require_relative "../battle/battle.rb"
-require_relative "../battle/damage.rb"
 
-module Character
+module Battle
 
-    class Hero < Character::Human
+    class Fighter < Character::Human
         attr_accessor :level
         def initialize(first_name, last_name,
                        level=Stats::DEFAULT_LEVEL,
