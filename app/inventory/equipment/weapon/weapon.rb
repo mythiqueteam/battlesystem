@@ -8,4 +8,5 @@ module Inventory
             @category = ["Weapon"]
         end
     end
+    DEFAULT_WEAPON = Inventory::Weapon.new()
 end
