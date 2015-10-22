@@ -1,6 +1,8 @@
-require_relative "./character/hero.rb"
-require_relative "./stats/level.rb"
+require_relative "inventory/equipment/weapon/sword/basic_sword.rb"
+require_relative "inventory/equipment/armor/plate/basic_plate.rb"
 
-initial_level = Stats::Level.new(2)
-zeyn = Character::Hero.new("Zeyn", "Dalton", level=initial_level)
-puts zeyn
+
+sword = Inventory::BasicSword.new()
+plate = Inventory::BasicPlate.new()
+equipment = Inventory::Equipment.new(weapon=sword, plate=plate)
+puts equipment
