@@ -10,6 +10,9 @@ module Character
             @birthday = birthday
         end
 
+        def to_s
+            @first_name+" "+@last_name+" : "+@level.to_s
+        end
     end
 end
 
