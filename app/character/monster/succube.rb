@@ -1,7 +1,7 @@
 module Character  
     module Monster 
         class Succube < Character::Fighter
-            attr_reader :status
+            attr_reader :name, :level, :status
             def initialize(level=Stats::DEFAULT_LEVEL, 
                            status=Stats::DEFAULT_STATUS
                            equipment=Inventory::DEFAULT_EQUIPMENT)
