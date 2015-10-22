@@ -1,4 +1,4 @@
-require_relative "../equipment.rb"
+require_relative "../piece_of_equipment.rb"
 
 module Inventory
     class Armor < Inventory::PieceOfEquipment
