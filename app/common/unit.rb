@@ -9,4 +9,5 @@ module Common
     DEXTERITY_UNIT = "DEX"
     WEIGHT_UNIT = "KG"
     UNKNOWN = "N/A"
+    DAMAGE_UNIT = "HP"
 end
