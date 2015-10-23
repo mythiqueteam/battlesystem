@@ -85,7 +85,7 @@ module Common
                 output_value = Common::ensure_range(@value + a, @min, @max)
             elsif a.is_a?(Object)
                 Common::check_unit(self, a)
-                output_value = @value + a
+                output_value = @value + a.value
             else
                 raise TypeError, "You are trying to sum two objects of different kinds."
             end
@@ -102,10 +102,12 @@ module Common
         end
 
         def coerce(other)
-            return self, other
+            [self, other]
         end
 
     end
 
 
 end
+
+
