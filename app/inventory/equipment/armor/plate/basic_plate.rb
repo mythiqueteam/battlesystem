@@ -10,7 +10,7 @@ module Inventory
             #setup bonus
             hit_point = Stats::HitPoint.new(10,10)
             defense = Stats::Defense.new(3)
-            @bonus = Stats::Status.new(hit_point=hit_point, defense=defense)
+            @bonus = Stats::Status.new(hit_point: hit_point, defense: defense)
         end
     end
 end
