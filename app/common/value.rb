@@ -55,7 +55,8 @@ module Common
     #
     # Value that can take only a value in a given range, eg: Strength [0,MAX_STATS] or gold [0, MAX_GOLD]
     class Value
-        attr_accessor :unit, :value, :min, :max
+        attr_accessor :unit, :min, :max
+        attr_reader :value
 
         def initialize(value=0, min=0, max=0, unit=nil)
             @value = value
@@ -81,15 +82,13 @@ module Common
 
         def +(a)
             if a.is_a?(Numeric)
-                @value += a
-                @value = Common::ensure_range(@value, @min, @max)
+                Common::ensure_range(@value + a, @min, @max)
             elsif a.is_a?(Object)
                 Common::check_unit(self, a)
-                @value += a.value
+                @value + a
             else
                 raise TypeError, "You are trying to sum two objects of different kinds."
             end
-            Value.new(@value, @min, @max, @unit)
         end
 
         def -(a)
@@ -101,6 +100,9 @@ module Common
             @value = -@value
         end
 
+        def coerce(other)
+            return self, other
+        end
 
     end
 
