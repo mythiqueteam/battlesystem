@@ -27,6 +27,7 @@ module Inventory
             total
         end
 
+        # Return the complete set of stats (sum over all pieces of equipment)
         def status
             all_attributes = @weapon.bonus.instance_variables
             result = Hash.new(0) #store all attributes
