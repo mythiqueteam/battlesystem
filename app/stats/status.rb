@@ -3,6 +3,8 @@ require_relative "./force.rb"
 require_relative "./defense.rb"
 require_relative "./hit_point.rb"
 require_relative "./magic_point.rb"
+require_relative "./dexterity.rb"
+require_relative "./luck.rb"
 
 module Stats
 
