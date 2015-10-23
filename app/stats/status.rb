@@ -36,6 +36,19 @@ module Stats
             end
             stat_values
         end
+
+
+        def +(other)
+            all_attributes = self.instance_variables
+            result = Hash.new(0) #store all attributes
+            for attribute in all_attributes do
+                attribute_name = attribute.to_s
+                attribute_name[0]=""
+                result[attribute_name.to_sym] = self.instance_variable_get(attribute.to_s) + 
+                                                other.instance_variable_get(attribute.to_s)
+            end
+            Status.new(result)
+        end
     end
 
     DEFAULT_STATUS = Status.new()
