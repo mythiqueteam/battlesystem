@@ -3,7 +3,7 @@ require_relative "damage.rb"
 module Battle
 
     class Fighter 
-        attr_accessor :level
+        attr_accessor :level, :is_dead
         def initialize(name,
                        level=Stats::DEFAULT_LEVEL,
                        status=Stats::DEFAULT_STATUS,
