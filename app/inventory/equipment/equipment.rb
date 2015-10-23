@@ -31,8 +31,6 @@ module Inventory
         def status
             all_attributes = @weapon.bonus.instance_variables
             result = Hash.new(0) #store all attributes
-            keys = []
-            values = []
             for attribute in all_attributes do
                 attribute_name = attribute.to_s
                 attribute_name[0]=""
