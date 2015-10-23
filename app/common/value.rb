@@ -92,6 +92,27 @@ module Common
             Value.new(output_value, @min, @max, @unit)
         end
 
+        def <(a)
+            @value < a
+        end
+
+        def >(a)
+            @value > a
+        end
+
+        def <=(a)
+            @value <= a
+        end
+
+        def >=(a)
+            @value >= a
+        end
+
+        def ==(a)
+            @value == a
+        end
+
+
         def -(a)
             b = -a
             self + b
