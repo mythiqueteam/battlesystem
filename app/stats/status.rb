@@ -8,14 +8,18 @@ module Stats
 
     class Status
         attr_accessor :hit_point, :magic_point, :force, :defense
-        def initialize(hit_point=Stats::DEFAULT_HIT_POINT,
-                       magic_point=Stats::DEFAULT_MAGIC_POINT,
-                       force=Stats::DEFAULT_FORCE,
-                       defense=Stats::DEFAULT_DEFENSE)
+        def initialize(hit_point: Stats::DEFAULT_HIT_POINT,
+                       magic_point: Stats::DEFAULT_MAGIC_POINT,
+                       force: Stats::DEFAULT_FORCE,
+                       defense: Stats::DEFAULT_DEFENSE,
+                       dexterity: Stats::DEFAULT_DEXTERITY,
+                       luck: Stats::DEFAULT_LUCK)
             @hit_point = hit_point
             @magic_point = magic_point
             @force = force
             @defense = defense
+            @dexterity = dexterity
+            @luck = luck
         end
     end
 
