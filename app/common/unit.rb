@@ -5,6 +5,8 @@ module Common
     MP_UNIT = "MP"
     FORCE_UNIT = "FOR"
     DEFENSE_UNIT = "DEF"
+    LUCK_UNIT = "LUC"
+    DEXTERITY_UNIT = "DEX"
     WEIGHT_UNIT = "KG"
     UNKNOWN = "N/A"
 end
