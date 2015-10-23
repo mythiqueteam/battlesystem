@@ -83,7 +83,7 @@ module Common
         def +(a)
             if a.is_a?(Numeric)
                 output_value = Common::ensure_range(@value + a, @min, @max)
-            elsif a.is_a?(Object)
+            elsif a.is_a?(Common::Value)
                 Common::check_unit(self, a)
                 output_value = @value + a.value
             else

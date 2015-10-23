@@ -1,4 +1,3 @@
-require_relative "../common/unit.rb"
 require_relative "./stats.rb"
 
 module Stats
@@ -11,7 +10,6 @@ module Stats
             @unit = Common::FORCE_UNIT
         end
     end
-
 
     DEFAULT_FORCE = Force.new(0)
 end

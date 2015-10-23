@@ -28,7 +28,7 @@ module Inventory
         end
 
         # Return the complete set of stats (sum over all pieces of equipment)
-        def status
+        def bonus
             all_attributes = @weapon.bonus.instance_variables
             result = Hash.new(0) #store all attributes
             for attribute in all_attributes do
@@ -36,11 +36,11 @@ module Inventory
                 attribute_name[0]=""
                 result[attribute_name.to_sym] = self.sum_bonus(attribute.to_s)
             end
-            Stats::Status.new(result)
+            Stats::Bonus.new(result)
         end
         
         def to_s
-            self.sum_bonus.to_s
+            self.bonus.to_s
         end
     end
 

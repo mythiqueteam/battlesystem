@@ -4,6 +4,7 @@ module Battle
 
     class Fighter 
         attr_accessor :level, :is_dead, :status, :equipment
+        attr_reader :name
         def initialize(name,
                        level=Stats::DEFAULT_LEVEL,
                        status=Stats::DEFAULT_STATUS,
@@ -19,7 +20,6 @@ module Battle
         def attack(target)
             damage = Battle::Damage.normal(@status, @equipment, target)
             target.status.hit_point -= damage
-            puts "Attack Damage=", damage
             if target.status.hit_point <= 0
                 target.status.hit_point = 0
                 target.is_dead = true
@@ -29,8 +29,8 @@ module Battle
         end
 
         # Return effective status (augmented by equipment)
-        def status
-            @status + @equipment.status
+        def effective_status
+            @status + @equipment.bonus
         end
 
         def pass() #do nothing
@@ -39,6 +39,12 @@ module Battle
 
         def to_s
             @name+" ("+@level.to_s+")"
+        end
+
+        # list all actions available in combat
+        def list_actions
+            puts "attack"
+            puts "pass"
         end
     end
 

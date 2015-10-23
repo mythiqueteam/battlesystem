@@ -32,6 +32,7 @@ module Battle
                 effective_damage = Common::ensure_range(effective_damage, 
                                                         MIN_DAMAGE,
                                                         MAX_DAMAGE)
+                puts "Damage: #{effective_damage} on #{target}"
                 damage = Battle::Damage.new(effective_damage)
             end
         end
