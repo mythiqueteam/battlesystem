@@ -26,6 +26,19 @@ module Inventory
             end
             total
         end
+
+        def status
+            all_attributes = @weapon.bonus.instance_variables
+            result = Hash.new(0) #store all attributes
+            keys = []
+            values = []
+            for attribute in all_attributes do
+                attribute_name = attribute.to_s
+                attribute_name[0]=""
+                result[attribute_name.to_sym] = self.sum_bonus(attribute.to_s)
+            end
+            Stats::Status.new(result)
+        end
         
         def to_s
             self.sum_bonus.to_s
