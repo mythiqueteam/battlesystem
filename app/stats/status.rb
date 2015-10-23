@@ -9,7 +9,9 @@ require_relative "./luck.rb"
 module Stats
 
     class Status
-        attr_accessor :hit_point, :magic_point, :force, :defense
+        attr_accessor :hit_point, :magic_point, 
+                      :force, :defense, :dexterity, :luck
+                      
         def initialize(hit_point: Stats::DEFAULT_HIT_POINT,
                        magic_point: Stats::DEFAULT_MAGIC_POINT,
                        force: Stats::DEFAULT_FORCE,
@@ -23,6 +25,9 @@ module Stats
             @dexterity = dexterity
             @luck = luck
         end
+
+
+        def to_s
     end
 
     DEFAULT_STATUS = Status.new()
