@@ -8,10 +8,10 @@ module Inventory
             @weight = Inventory::DEFAULT_WEIGHT
 
             #setup bonus
-            hit_point = Stats::HitPoint.new(10,10)
-            force = Stats::Force.new(1)
-            defense = Stats::Defense.new(1)
-            @bonus = Stats::Status.new(hit_point: hit_point, force: force, defense: defense)
+            hit_point = 10
+            force = 1
+            defense = 1
+            @bonus = Stats::Bonus.new(hit_point: hit_point, force: force, defense: defense)
         end
     end
 end

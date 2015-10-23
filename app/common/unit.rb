@@ -1,6 +1,6 @@
 module Common
 
-    LEVEL_UNIT = "LEV"
+    LEVEL_UNIT = "LVL"
     HP_UNIT = "HP"
     MP_UNIT = "MP"
     FORCE_UNIT = "FOR"
