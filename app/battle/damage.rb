@@ -22,7 +22,8 @@ module Battle
         # @return [Damage] damage in HP to target [0, MAX_HP]
         def self.normal(status, equipment, target)
             if target.is_dead
-                raise KeyError, "Target is dead"
+                puts "Target is dead: Damage is set to 0"
+                Battle::Damage.new(0)
             else
                 #sum bonus from equipment and fighter
                 total_force = equipment.sum_bonus("@force") + status.force

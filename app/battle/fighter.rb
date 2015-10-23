@@ -19,11 +19,18 @@ module Battle
         def attack(target)
             damage = Battle::Damage.normal(@status, @equipment, target)
             target.status.hit_point -= damage
+            puts "Attack Damage=", damage
             if target.status.hit_point <= 0
                 target.status.hit_point = 0
                 target.is_dead = true
                 #eventually reset all target status (eg: poison)
+                puts "#{target.name} is dead !"
             end
+        end
+
+        # Return effective status (augmented by equipment)
+        def status
+            @status + @equipment.status
         end
 
         def pass() #do nothing
