@@ -25,12 +25,13 @@ module Battle
                 raise KeyError, "Target is dead"
             else
                 #sum bonus from equipment and fighter
-                total_force = equipment.sum_bonus.force + status.force
-                total_defense = target.equipment.sum_bonus.defense + target.status.defense
+                total_force = equipment.sum_bonus("@force") + status.force
+                total_defense = target.equipment.sum_bonus("@defense") + target.status.defense
                 effective_damage = total_force.value - total_defense.value
-                damage = Battle::Damage.new(effective_damage)    
-                puts total_force, total_defense, damage            
-                damage = Common::ensure_range(damage.value, @min, @max)
+                effective_damage = Common::ensure_range(effective_damage, 
+                                                        MIN_DAMAGE,
+                                                        MAX_DAMAGE)
+                damage = Battle::Damage.new(effective_damage)
             end
         end
 
