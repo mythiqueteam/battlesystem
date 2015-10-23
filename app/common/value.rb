@@ -82,13 +82,14 @@ module Common
 
         def +(a)
             if a.is_a?(Numeric)
-                Common::ensure_range(@value + a, @min, @max)
+                output_value = Common::ensure_range(@value + a, @min, @max)
             elsif a.is_a?(Object)
                 Common::check_unit(self, a)
-                @value + a
+                output_value = @value + a
             else
                 raise TypeError, "You are trying to sum two objects of different kinds."
             end
+            Value.new(output_value, @min, @max, @unit)
         end
 
         def -(a)
