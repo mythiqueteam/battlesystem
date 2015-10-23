@@ -16,7 +16,7 @@ module Stats
 
             #sanity check
             @max = Common::ensure_range(@max, Stats::MIN_HP, Stats::MAX_HP)
-            @value = Common::ensure_range(@value, @min, @max) ##problem
+            @value = Common::ensure_range(@value, @min, @max) 
         end
 
     end
