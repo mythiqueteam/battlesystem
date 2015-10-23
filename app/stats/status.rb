@@ -11,7 +11,7 @@ module Stats
     class Status
         attr_accessor :hit_point, :magic_point, 
                       :force, :defense, :dexterity, :luck
-                      
+
         def initialize(hit_point: Stats::DEFAULT_HIT_POINT,
                        magic_point: Stats::DEFAULT_MAGIC_POINT,
                        force: Stats::DEFAULT_FORCE,
@@ -28,6 +28,14 @@ module Stats
 
 
         def to_s
+            ##IMPROV: I'm sure I can do that without a for loop...
+            stat_names = self.instance_variables
+            stat_values ||= []
+            for name in stat_names do
+                stat_values << self.instance_variable_get(name)
+            end
+            stat_values
+        end
     end
 
     DEFAULT_STATUS = Status.new()
