@@ -29,7 +29,12 @@ module Inventory
             total_dexterity += equipment.instance_variable_get(piece).bonus.dexterity
             total_luck += equipment.instance_variable_get(piece).bonus.luck
         end
-        Stats::Status.new(total_hp, total_mp, total_force, total_defense, total_dexterity, total_luck)
+        Stats::Status.new(hit_point: total_hp,
+                          magic_point: total_mp,
+                          force: total_force,
+                          defense: total_defense,
+                          dexterity: total_dexterity,
+                          luck:total_luck)
     end
 
 
@@ -42,16 +47,10 @@ module Inventory
         end
         
         def to_s
-            list_bonus = "list of bonus" #FIXME: create a routine to list out all bonus for a given equipment (eg sword)
-            "("+list_bonus+")"
+            Inventory::sum_bonus(self).to_s
         end
     end
 
     DEFAULT_EQUIPMENT = Inventory::Equipment.new(Inventory::DEFAULT_WEAPON,
                                                  Inventory::DEFAULT_PLATE)
 end
-
-
-equipment = Inventory::DEFAULT_EQUIPMENT
-total_bonus = Inventory::sum_bonus(equipment)
-puts total_bonus
