@@ -1,4 +1,4 @@
 module Character
-    module Monster 
-    end
+  module Monster 
+  end
 end
