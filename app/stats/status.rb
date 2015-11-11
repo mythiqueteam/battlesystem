@@ -58,7 +58,7 @@ module Stats
                     attribute_name[0]=""
                     charac_stat =  self.instance_variable_get(attribute.to_s).dup #current status. need to duplicate the variable so as to not alter the original one.
 
-                    #we need to separate HP/MP that are variable from force/defense/etc that are constant. In a next version, we might want to separate HP/MP as a different class, and surcharge operator + differently.
+                    # HACK: we need to separate HP/MP that are variable from force/defense/etc that are constant. In a next version, we might want to separate HP/MP as a different class, and surcharge operator + differently.
                     if attribute_name == "hit_point" or attribute_name == "magic_point"
                         charac_stat.max += other.instance_variable_get(attribute.to_s) #add equipment to max
                     else
