@@ -8,6 +8,7 @@ require_relative "character/monster/succube.rb"
 
 
 
+
 #SETUP COMBAT
 
 def create_ennemy()
@@ -32,7 +33,6 @@ def create_hero()
                                         Inventory::BasicPlate.new())
   hero = Battle::Fighter.new(name, zeyn_level, zeyn_status, zeyn_equip)
 end
-
 
 
 #COMBAT STATUS
@@ -97,11 +97,11 @@ hero = create_hero
 ennemy = create_ennemy
 welcome_message(hero, ennemy)
 round = 0 #round counter
-
 until ennemy.is_dead do #should add condition hero is dead
   round_status(hero, ennemy, round)
   user_decide(hero, ennemy)
   ennemy.attack(hero) #here we should put a function where ennemy IA chooses the best action. For the moment the ennemy attacks the hero no matter what
+
 
   #FIXME: the ennemy attacks, but hero status is not updated. I think it is when I print the status, it resets because of the equipment
 
