@@ -1,11 +1,12 @@
-require_relative "../equipment.rb"
+require_relative "../piece_of_equipment.rb"
 
 module Inventory
-    class Armor < Inventory::Equipment
-        attr_reader :bonus, :category
-        def initialize(bonus=Stats::DEFAULT_STATUS)
-            @bonus = bonus
-            @category = ["Armor"]
-        end
+  class Armor < Inventory::PieceOfEquipment
+    attr_reader :name, :bonus, :category
+    def initialize(name="None", bonus=Stats::DEFAULT_BONUS)
+      @name = name
+      @bonus = bonus
+      @category = ["Armor"]
     end
+  end
 end

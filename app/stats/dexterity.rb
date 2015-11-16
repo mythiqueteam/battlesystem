@@ -2,14 +2,15 @@ require_relative "../common/unit.rb"
 require_relative "./stats.rb"
 
 module Stats
-  class Defense < Common::Value
+
+  class Dexterity < Common::Value
     def initialize(value)
       @value = value
       @min = Stats::MIN_STAT_VALUE
       @max = Stats::MAX_STAT_VALUE
-      @unit = Common::DEFENSE_UNIT
+      @unit = Common::DEXTERITY_UNIT
     end
   end
 
-  DEFAULT_DEFENSE = Defense.new(0)
+  DEFAULT_DEXTERITY = Dexterity.new(0)
 end
